@@ -20,17 +20,19 @@ class Detail_transaksiController extends Controller
     }
     public function tambah()
     {
-        return view ('detail_transaksi.tambah');
+            $transaksi= new Transaksi;
+            $mobil= new Mobil;
+
+        return view ('detail_transaksi.tambah',compact('transaksi','mobil'));
     }
     public function simpan(Request $input)
     {
         // $this->validate($input,[
         // 'username'=>'required',
         // 'password'=>'required',]);
-        $detail_transaksi = new Detail_transaksi($input->only('id_transaksi','id_mobil'));
-        $detail_transaksi->nama_pelanggan = $input->nama_pelanggan;
-        $detail_transaksi->alamat  = $input->alamat;
-        $detail_transaksi->no_hp = $input->no_hp;
+        $detail_transaksi = new Detail_transaksi;
+        $detail_transaksi->id_transaksi = $input->id_transaksi;
+        $detail_transaksi->id_mobil  = $input->id_mobil;
         $informasi = $detail_transaksi->save() ? 'Berhasi simpan data' : 'Gagal simpan data';
 
         return redirect('detail_transaksi')->with(['informasi'=>$informasi]);

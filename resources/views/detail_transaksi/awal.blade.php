@@ -11,10 +11,8 @@
 			<tr>
 				<th> No. </th>
 				<th> Nama Mobil </th>
-				<th> Jumlah Hari </th>
-				<th> Nama Pelanggan </th>
-				<th> Jenis Kelamin </th>
-				<th> No KTP </th>
+				<th> No Transaksi </th>
+				<th> Aksi </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -22,10 +20,9 @@
 			@foreach ($data as $detail_transaksi)
 				<tr>
 					<td>{{ $x++ }}</td>
-					<td>{{ $detail_transaksi->username or 'username kosong' }}</td>
-					<td>{{ $detail_transaksi->password or 'password kosong' }}</td>
-					<td>{{ $detail_transaksi->nama or 'nama kosong' }}</td>
-					<td>{{ $detail_transaksi->level or 'level kosong' }}</td>
+					<td>{{ $detail_transaksi->mobil->nama_mobil or 'data kosong' }}</td>
+					<td>{{ $detail_transaksi->id_transaksi or 'data kosong' }}</td>
+					
 				
 					<td>
 						<div class="btn-group" role="group">

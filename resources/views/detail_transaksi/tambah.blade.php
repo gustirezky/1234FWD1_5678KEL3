@@ -2,10 +2,10 @@
 @section('container')
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<strong><a href="{{url('admin')}}"><i style="color:white;" class="fa text-default fa-chevron-left"></i></a> Tambah Data Admin</strong>
+			<strong><a href="{{url('detail_transaksi')}}"><i style="color:white;" class="fa text-default fa-chevron-left"></i></a> Tambah Data detail_transaksi</strong>
 		</div>
-		{!! Form::open(['url'=>'admin/simpan','class'=>'form-horizontal']) !!}
-		@include('admin.form')
+		{!! Form::open(['url'=>'detail_transaksi/simpan','class'=>'form-horizontal']) !!}
+		@include('detail_transaksi.form')
 		<div style="width:100%;text-align:right;">
 			<button class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
 			<button type="reset" class="btn btn-danger"><i class="fa fa-undo"></i> Ulangi </button>	

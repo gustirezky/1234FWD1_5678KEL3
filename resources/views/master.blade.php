@@ -60,7 +60,9 @@
 
 						</ul>
 					</li>
-					<li class="dropdown active">
+					
+				
+	<li class="dropdown active">
 						<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mobil <span class="caret"></span></a>
 						<ul class="dropdown-menu" aria-labelledby="dLabel">
 							<li><a href="{{url('kategori')}}">Data Mobil</a></li>
@@ -74,8 +76,11 @@
 
 						</ul>
 					</li>
+	
+					
 					<li><a href="{{url('proses')}}"> Proses <span></span></a>
 							<li><a href="{{ url('logout')}}">Logout</a></li>
+							<li><a href="{{ url('login')}}">Login</a></li>
 					</li>
 				</ul>
 									</div><!--/.nav-collapse-->

@@ -1,9 +1,22 @@
 <?php
+
+//////////////////////////////////////////////////////////
+	
+	
+	
 Route::get('/login','SesiController@form');
 Route::post('/login','SesiController@validasi');
 Route::get('/logout','SesiController@logout');
 Route::get('/','SesiController@index');
-	Route::get('admin','AdminController@awal');
+
+	Route::group(['middleware'=>'AuthentifikasiUser'],function ()
+{
+	Route::get('proses', function () {
+    return view('proses');
+});
+});
+
+Route::get('admin','AdminController@awal');
 	Route::get('admin/tambah','AdminController@tambah');
 	Route::post('admin/simpan','AdminController@simpan');
 	Route::get('admin/edit/{admin}','AdminController@edit');
@@ -72,16 +85,3 @@ Route::get('/','SesiController@index');
 	Route::post('supplier_mobil/edit/{supplier_mobil}','SuppliermobilController@update');
 	Route::get('supplier_mobil/hapus/{supplier_mobil}','SuppliermobilController@hapus');
 	Route::get('supplier_mobil/{supplier_mobil}','SuppliermobilController@lihat');
-//////////////////////////////////////////////////////////
-	Route::get('proses', function () {
-    return view('proses');
-});
-	
-	
-
-	Route::group(['middleware'=>'AuthentifikasiUser'],function ()
-{
-	Route::get('master2', function () {
-    return view('master2');
-});
-});

@@ -36,9 +36,11 @@ class SesiController extends Controller
     	Auth::login($admin);
         if (Auth::check() && Auth::user()->level==1) {
             # code...
+            
             return redirect('proses')->with('informasi',"Selamat datanggg ".Auth::user()->username);
         }
     	if(Auth::check())
+            
     		return redirect('proses')->with('informasi',"Selamat datang ".Auth::user()->username);
     }
     return redirect('/login')->withErrors(['pengguna tidak ditemukan']);
