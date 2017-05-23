@@ -2,10 +2,10 @@
 @section('container')
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<strong><a href="{{url('supplier')}}"><i style="color:white;" class="fa text-default fa-chevron-left"></i></a> Tambah Data supplier</strong>
+			<strong><a href="{{url('supplier_mobil')}}"><i style="color:white;" class="fa text-default fa-chevron-left"></i></a> Tambah Data supplier_mobil</strong>
 		</div>
-		{!! Form::open(['url'=>'supplier/simpan','class'=>'form-horizontal']) !!}
-		@include('supplier.form')
+		{!! Form::open(['url'=>'supplier_mobil/simpan','class'=>'form-horizontal']) !!}
+		@include('supplier_mobil.form')
 		<div style="width:100%;text-align:right;">
 			<button class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
 			<button type="reset" class="btn btn-danger"><i class="fa fa-undo"></i> Ulangi </button>	

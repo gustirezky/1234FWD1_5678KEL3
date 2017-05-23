@@ -40,7 +40,10 @@ class Detail_transaksiController extends Controller
     public function edit($id)
     {
         $detail_transaksi = Detail_transaksi::find($id);
-        return view('detail_transaksi.edit')->with(array('detail_transaksi'=>$detail_transaksi));
+        $transaksi= new Transaksi;
+            $mobil= new Mobil;
+
+        return view ('detail_transaksi.edit',compact('transaksi','mobil','detail_transaksi'));
     }
     public function lihat($id)
     {

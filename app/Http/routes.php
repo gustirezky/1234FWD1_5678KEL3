@@ -8,12 +8,13 @@ Route::get('/login','SesiController@form');
 Route::post('/login','SesiController@validasi');
 Route::get('/logout','SesiController@logout');
 Route::get('/','SesiController@index');
-
-	Route::group(['middleware'=>'AuthentifikasiUser'],function ()
-{
-	Route::get('proses', function () {
+Route::get('proses', function () {
     return view('proses');
 });
+	
+	Route::group(['middleware'=>'AuthentifikasiUser'],function ()
+{
+	
 });
 
 Route::get('admin','AdminController@awal');
@@ -78,10 +79,10 @@ Route::get('admin','AdminController@awal');
 	Route::get('supplier/hapus/{supplier}','SupplierController@hapus');
 	Route::get('supplier/{supplier}','SupplierController@lihat');
 
-	Route::get('supplier_mobil','SuppliermobilController@awal');
-	Route::get('supplier_mobil/tambah','SuppliermobilController@tambah');
-	Route::post('supplier_mobil/simpan','SuppliermobilController@simpan');
-	Route::get('supplier_mobil/edit/{supplier_mobil}','SuppliermobilController@edit');
-	Route::post('supplier_mobil/edit/{supplier_mobil}','SuppliermobilController@update');
-	Route::get('supplier_mobil/hapus/{supplier_mobil}','SuppliermobilController@hapus');
-	Route::get('supplier_mobil/{supplier_mobil}','SuppliermobilController@lihat');
+	Route::get('supplier_mobil','Supplier_mobilController@awal');
+	Route::get('supplier_mobil/tambah','Supplier_mobilController@tambah');
+	Route::post('supplier_mobil/simpan','Supplier_mobilController@simpan');
+	Route::get('supplier_mobil/edit/{supplier_mobil}','Supplier_mobilController@edit');
+	Route::post('supplier_mobil/edit/{supplier_mobil}','Supplier_mobilController@update');
+	Route::get('supplier_mobil/hapus/{supplier_mobil}','Supplier_mobilController@hapus');
+	Route::get('supplier_mobil/{supplier_mobil}','Supplier_mobilController@lihat');

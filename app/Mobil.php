@@ -18,11 +18,11 @@ class Mobil extends Model
        }
 
     public function Transaksi(){
-       	return $this->hasMany(Transaksi::class,'id_mobil');
+       	return $this->hasMany(Transaksi::class);
        }
 
-    public function Suplier(){
-       	return $this->hasMany(Suplier::class,'id_mobil');
+    public function Supplier_mobil(){
+        return $this->belongsTo(Supplier_mobil::class);
        }
 
 
@@ -30,7 +30,7 @@ class Mobil extends Model
   {
     $out = [];
     foreach ($this->all() as $mblplg){
-      $out[$mblplg->id] = "{$mblplg->pelanggan->nama_pelanggan}(kategori{$mblplg->kategori->nama_mobil})";
+      $out[$mblplg->id] = "{$mblplg->pelanggan->nama_pelanggan}({$mblplg->kategori->nama_mobil})";
     }
     return $out;
   }
